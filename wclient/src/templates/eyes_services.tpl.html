@@ -1,0 +1,59 @@
+<div class="col-md-2">
+
+<form id="id_services" name="servicesForm" ng-submit="submit(servicesForm)" novalidate>
+	
+	<label>age</label>
+	  <select name="inputAge"  ng-model="userServices.age">
+                    <option value="0-18ans">0-18ans</option>
+                    <option value="18-98ans" selected>18_98ans</option>
+                </select>
+
+ <br/>
+
+	<label>pays</label>
+	  <select name="inputPays"  ng-model="userServices.pays">
+                    <option value="espagne">Espagne</option>
+                    <option value="france" selected>France</option>
+                    <option value="portugal">Portugal</option>
+                    <option value="italie">Italie</option>
+                </select>
+
+ <br/>
+
+                <label>region</label>
+	<div ng-class="{'has-error': servicesForm.region.$invalid}">
+			<!--<label>Pseudo</label>-->
+			<!--<div ng-show="signupForm.region.$error.required">Ce champ est requis</div> -->
+			<div ng-show="servicesForm.region.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+			<div ng-show="servicesForm.region.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+			<input class="form-control"
+					type="text"
+					name="region"
+					ng-model="userServices.region"
+					ng-minlength="4"
+					ng-maxlength="24"
+					required/>
+	</div>
+
+		<label>ville</label>
+	<div ng-class="{'has-error': servicesForm.ville.$invalid}">
+			<!--<label>Pseudo</label>-->
+			<!--<div ng-show="signupForm.region.$error.required">Ce champ est requis</div> -->
+			<div ng-show="servicesForm.ville.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+			<div ng-show="servicesForm.ville.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+			<input class="form-control"
+					type="text"
+					name="ville"
+					ng-model="userServices.ville"
+					ng-minlength="4"
+					ng-maxlength="24"
+					required/>
+	</div>
+
+     <br/>
+	<button class="btn btn-primary" type="submit">Rechercher</button>
+
+
+</form>
+
+</div>

@@ -1,0 +1,38 @@
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="app/css/app.css">
+</head>
+	<body ng-app="EyesApp">
+
+		<div ng-controller="LayoutController">
+			<header>
+				<nav class="navbar">
+					<ul>
+						<li><a href="#/">Accueil</a></li>
+						<li ng-if="user">Bienvenue {{user.pseudo}}</li>
+						<li><img ng-src="app/images/oeil-generique-2-1.jpg"/></li>
+					</ul>
+				</nav>
+			</header>
+
+			<ng-view></ng-view>
+
+		</div>
+
+		<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+		<script type="text/javascript" src="app/main.js"></script>
+		<script type="text/javascript" src="app/route.js"></script>
+		<script type="text/javascript" src="app/controllers/controllers.js"></script>
+		<script type="text/javascript" src="app/controllers/layout.controller.js"></script>
+		<script type="text/javascript" src="app/controllers/index.controller.js"></script>
+		<script type="text/javascript" src="app/controllers/inscription.controller.js"></script>
+		<script type="text/javascript" src="app/controllers/dashboard.controller.js"></script>
+		<script type="text/javascript" src="app/controllers/eyesservices.controller.js"></script>
+		<script type="text/javascript" src="app/controllers/eyesservicesaccueil.controller.js"></script>
+		<script type="text/javascript" src="app/controllers/eyesservicesforum.controller.js"></script>
+	</body>
+</html>

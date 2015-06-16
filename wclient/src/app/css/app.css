@@ -1,0 +1,77 @@
+
+body{
+	 background-color: #E8E3DC;
+	  background-image: url('../images/url.gif');
+      background-repeat: no-repeat;
+      background-size: 15%;
+      background-position-x: center;
+      background-position-y: center;
+ }
+
+header nav  ul{
+	display: inline-block;
+}
+
+header nav ul li{
+	display: inline-block;
+}
+
+header nav ul li img{
+	width: 7%;
+	margin-left: 1100px;
+}
+
+header {
+	background-color: black;
+	color:#FFFFFF;
+}
+
+ .id_1{
+          color:mediumvioletred;
+          font-weight: bold;
+          font-size:20px;
+      }
+
+ .id_2{
+          font-weight: bold;
+          font-size: 20px;
+      }
+
+
+#id_signup{
+	margin-left: 50px;
+}
+
+.col-md-4 a{
+            background-image: url('../images/fleche-bleu-a-cote-icone-4900-128.png');
+            background-repeat: no-repeat;
+            background-size: 5%;
+            padding-left:20px;
+            font-weight:bold;
+            font-size:20px;
+            margin-left:20px;
+}
+
+.col-md-2 a{
+            background-image: url('../images/fleche-bleu-a-cote-icone-4900-128.png');
+            background-repeat: no-repeat;
+            background-size: 10%;
+            padding-left:20px;
+            font-weight:bold;
+            font-size:20px;
+            margin-left:20px;
+}
+
+.col-md-2 img{
+
+  width: 30%;
+}
+
+.col-md-2 p{
+  color:blueviolet;
+  font-weight: bold;
+}
+
+.label p{
+  color:black;
+}

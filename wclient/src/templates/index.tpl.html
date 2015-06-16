@@ -1,0 +1,46 @@
+<div class="col-md-2">
+	<form name="loginForm" ng-submit="submit(loginForm)" novalidate>
+
+		<img ng-src="app/images/bonhomme_2.png" >
+		<label>Mon compte</label>
+			</br/><br/>
+		<label>Membre</label>
+		<div ng-class="{'has-error': loginForm.pseudo.$invalid}">
+			<!--<label>Pseudo</label>-->
+			<div ng-show="loginForm.pseudo.$error.required">Ce champ est requis</div>
+			<div ng-show="loginForm.pseudo.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+			<div ng-show="loginForm.pseudo.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+			<input class="form-control"
+					type="text"
+					name="pseudo"
+					ng-model="userLogin.pseudo"
+					ng-minlength="4"
+					ng-maxlength="24"
+					placeholder="pseudo"
+					required/>
+		</div>
+
+
+		<div ng-class="{'has-error': loginForm.password.$invalid}">
+			<!--<label>Mot de passe</label>-->
+			<div ng-show="loginForm.password.$error.required">Ce champ est requis</div>
+			<div ng-show="loginForm.password.$error.minlength">Ce champ doit faire 2 caractères minimum</div>
+			<input class="form-control"
+					type="password"
+					name="password"
+					ng-model="userLogin.password"
+					ng-minlength="2"
+					required>
+		</div>
+
+		<button class="btn btn-primary" type="submit">Connectez-vous</button>
+	</form>
+</div>
+<div class="col-md-7"></div>
+<div class="col-md-3">
+	<p><span class="id_1">EARTH</span><span class="id_2"> EYES.fr</span></p>
+	<label>Nouveau membre</label>
+	<br/>
+	<img ng-src="app/images/bonhomme_3.png" >
+	<a href="#/inscription">Inscrivez vous</a>
+</div>
