@@ -1,0 +1,186 @@
+
+
+<div class="col-md-2">
+
+<form id="id_services" name="forumForm" ng-submit="submit(forumForm)" novalidate>
+	
+	
+                <label>produit</label>
+	<div ng-class="{'has-error': forumForm.produit.$invalid}">
+			<!--<label>Pseudo</label>-->
+			<!--<div ng-show="signupForm.region.$error.required">Ce champ est requis</div> -->
+			<div ng-show="forumForm.produit.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+			<div ng-show="forumForm.produit.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+			<input class="form-control"
+					type="text"
+					name="produit"
+					ng-model="produitForum.produit"
+					ng-minlength="4"
+					ng-maxlength="24"
+					required/>
+	</div>
+
+              <label>email</label>
+	<div ng-class="{'has-error': forumForm.email.$invalid}">
+			<!--<label>Pseudo</label>-->
+			<!--<div ng-show="signupForm.region.$error.required">Ce champ est requis</div> -->
+			<div ng-show="forumForm.email.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+			<div ng-show="forumForm.email.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+			<input class="form-control"
+					type="text"
+					name="email"
+					ng-model="produitForum.email"
+					ng-minlength="4"
+					ng-maxlength="24"
+					required/>
+	</div>
+
+            <label>description produit</label>
+	<div ng-class="{'has-error': forumForm.descproduit.$invalid}">
+			<!--<label>Pseudo</label>-->
+			<!--<div ng-show="signupForm.region.$error.required">Ce champ est requis</div> -->
+			<div ng-show="forumForm.descproduit.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+			<div ng-show="forumForm.descproduit.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+			<textarea class="form-control"
+					name="descproduit"
+					ng-model="produitForum.descproduit"
+					ng-minlength="4"
+					ng-maxlength="24"
+					required /> </textarea>
+	</div>
+	
+     <br/>
+
+     	<div class="row">
+     			<div class="col-md-4">
+     				<label>prix</label>
+					<div ng-class="{'has-error': forumForm.prix.$invalid}">
+					<!--<label>Pseudo</label>-->
+					<!--<div ng-show="signupForm.region.$error.required">Ce champ est requis</div> -->
+					<div ng-show="forumForm.prix.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+					<div ng-show="forumForm.prix.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+					<input class="form-control"
+						type="text"
+						name="prix"
+						ng-model="produitForum.prix"
+						ng-minlength="1"
+						ng-maxlength="24"
+						required/>
+					</div>
+
+     			</div>
+
+     			<div class="col-md-2">
+     				 <select style="margin-top:30px;" name="inputDevise" ng-model="produitForum.devise">
+                           <option value="dollar_US">Dollar US</option>
+                           <option value="eur" selected>Euro</option>
+                           <option value="dollar_Canadien">Dollar canadien</option>
+                     </select>
+
+     			</div>
+     	</div>
+
+
+     <br/>
+
+     <label>photo produit (facultatif)</label>
+      
+     <!--<input type="file" name="image" ng-model="produitForum.image" id="getimage"> -->
+ <input type="file"  id="file" name='image'  onchange="angular.element(this).scope().fileNameChanged(this)" />
+
+
+      <div  id="imgstore"></div>
+
+
+
+     <br/>
+
+	<button class="btn btn-primary" type="submit">Valider</button>
+
+
+</form>
+
+</div>
+
+<div class="col-md-7">
+  <div class="he"> 
+              Contact par:
+              <br/>
+               <a href="Vue/EmailVue.php">Mail</a>
+               <br/> 
+               <a href="#">Chat</a> 
+               <br/>
+               <a href="#">Webcam</a>
+
+              <br/><br/>
+
+    </div>
+    
+    <label style="margin-left:600px;">Eyes Member Choice</label>
+    <br/>
+     
+     <img  id="jp"  style="margin-left:600px;width:15%;"  src=""/>
+
+     <br/>
+     <br/>
+           
+          <!--<div class="clearfix">
+              <div class="id_11">-->
+     <!--<label  style="margin-left:700px">Voir article precedent</label> -->
+       <button  style="margin-left:600px" ng-click="prec()" class="btn btn-success">Voir article prec</button>
+     <br/>
+      
+    <!-- <img id="prec" style="margin-left:700px;width:2%;" src="app/images/fleche1.jpg"/> -->
+     <br/>
+              <!--</div>
+              <div class="id_12">--> 
+     <!--<label  style="margin-left:700px">Voir article suivant</label>-->
+        <button  style="margin-left:600px" ng-click="suiv()" class="btn btn-success">Voir article suiv</button>
+    
+      <br/>
+      <!--<img id="suiv" style="margin-left:700px;width:2%;" src="app/images/fleche2.jpg"/> -->
+         
+</div>
+
+<div class="col-md-2">
+	  
+	   <div id="nom" style="">
+        </div>
+      
+      <div id="prix" style="">
+        </div>
+      
+        <div id="pseudo" style="">
+        </div>
+      
+        <div id="email" style="">
+        </div>
+      
+        <div id="mess" style="">
+        </div> 
+
+        <br/>
+
+       <button   ng-click="add(indice)"  class="btn btn-primary">Ajout pannier</button>
+       <br/><br/>
+
+       <button  ng-click="supp()" class="btn btn-primary">Suppression pannier</button>
+  		<br/><br/>
+       <button   ng-click="save()" class="btn btn-primary">Sauvegarde pannier</button>
+    
+</div>
+
+<div class="col-md-1">
+	<p> Liste produits panier </p>
+   <img  src="../../wclient/src/app/images/icone_panier.jpg"/>
+
+	<br/>
+
+	<div id="listearticles" style=""/>
+           
+</div> 
+
+
+
+
+

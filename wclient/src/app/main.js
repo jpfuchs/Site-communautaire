@@ -1,4 +1,8 @@
+angular.module('EyesApp.services', []);
+
+
 angular.module('EyesApp', [
 	'ngRoute',
-	'EyesApp.controllers'
+	'EyesApp.controllers',
+	'EyesApp.services'
 	]);

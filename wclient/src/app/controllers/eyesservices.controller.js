@@ -1,9 +1,10 @@
 angular.module('EyesApp.controllers')
 
-	.controller('EyesservicesController', ['$scope', '$http', '$location',  function ($scope,$http, $location) {
+	.controller('EyesservicesController', ['$scope', '$http', '$location', '$rootScope',  function ($scope,$http, $location, $rootScope) {
 		console.log("eyesservice controller");
 
 		$scope.userServices = {};
+		$rootScope.MembreServices = {};
 
 
 		$scope.submit = function (form) {
@@ -15,8 +16,12 @@ angular.module('EyesApp.controllers')
 
 			$http.post('http://localhost:3000/users/services', $scope.userServices)
 					.success(function (user) {
+						console.log("he");
 						console.log(user);
-						console.log("test ok jP");
+						$rootScope.MembreServices = user;
+						console.log("test ok jP avant");
+						console.log($rootScope.MembreServices);
+						console.log("test ok jp apres");
 						$location.path('/eyes_services_accueil');
 					})
 					.error(function (reason) {

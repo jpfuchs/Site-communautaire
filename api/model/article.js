@@ -11,6 +11,14 @@ var articleSchema = new Schema({
 		type: String,
 		required: true
 	},
+	email: {
+		type: String,
+		required: true
+	},
+	pseudo: {
+		type: String,
+		required: true
+	},
 	descproduit: {
 		type: String,
 		required: true

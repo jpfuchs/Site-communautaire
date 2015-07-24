@@ -75,3 +75,27 @@ header {
 .label p{
   color:black;
 }
+
+ .cust{
+        color:black;
+       }
+
+  .he{
+    margin-left:600px;
+  }
+
+  a{
+    text-decoration: underline;
+  }
+
+
+.col-md-1 p{
+   color:blueviolet;
+   font-weight: bold;
+   text-decoration: underline;
+
+}
+
+li{
+  list-style-type: none;
+}

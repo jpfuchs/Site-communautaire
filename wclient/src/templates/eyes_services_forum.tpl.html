@@ -1,3 +1,5 @@
+
+
 <div class="col-md-2">
 
 <form id="id_services" name="forumForm" ng-submit="submit(forumForm)" novalidate>
@@ -13,6 +15,21 @@
 					type="text"
 					name="produit"
 					ng-model="produitForum.produit"
+					ng-minlength="4"
+					ng-maxlength="24"
+					required/>
+	</div>
+
+              <label>email</label>
+	<div ng-class="{'has-error': forumForm.email.$invalid}">
+			<!--<label>Pseudo</label>-->
+			<!--<div ng-show="signupForm.region.$error.required">Ce champ est requis</div> -->
+			<div ng-show="forumForm.email.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+			<div ng-show="forumForm.email.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+			<input class="form-control"
+					type="text"
+					name="email"
+					ng-model="produitForum.email"
 					ng-minlength="4"
 					ng-maxlength="24"
 					required/>
@@ -69,41 +86,13 @@
      <label>photo produit (facultatif)</label>
       
      <!--<input type="file" name="image" ng-model="produitForum.image" id="getimage"> -->
- <input type="file"  id="file" name='image'  onchange="angular.element(this).scope().fileNameChanged(this)" />
+<!-- <input type="file"  id="file" name='image'  onchange="angular.element(this).scope().fileNameChanged(this)" /> -->
 
-      <div  id="imgstore"></div>
+<input type="file" >
+ <img id="imgstore" src="#" alt="your image" height=100 width=200>
+      <!--<div  id="imgstore"></div>-->
 
-      <script type="text/javascript">
 
-function imageHandler(e2) 
-{ 
-  var store = document.getElementById('imgstore');
-  store.innerHTML='<img ng-src="' + e2.target.result +'">';
-  console.log(store.innerHTML);
-}
-
-function loadimage(e1)
-{
-  var filename = e1.target.files[0]; 
-  var fr = new FileReader();
-  console.log("jp");
-  fr.onload = imageHandler;  
-  fr.readAsDataURL(filename); 
-}
-
-window.onload=function()
-{
-  //var x = document.getElementById("filebrowsed");
-  //x.addEventListener('change', readfile, false);
-  var y = document.getElementById("getimage");
-  y.addEventListener('change', loadimage, false);
-  console.log("test");
-}
-
-</script>
-
-                          
-                           
 
      <br/>
 
@@ -113,3 +102,168 @@ window.onload=function()
 </form>
 
 </div>
+
+<div class="col-md-7">
+  <div class="he"> 
+              Contact par:
+              <br/>
+               <a href="#/mail">Mail</a>
+               <br/> 
+               <a href="#">Chat</a> 
+               <br/>
+               <a href="#">Webcam</a>
+
+              <br/><br/>
+
+    </div>
+    
+    <label style="margin-left:600px;">Eyes Member Choice</label>
+    <br/>
+     
+     <img  id="jp"  style="margin-left:600px;width:15%;"  src=""/>
+
+     <br/>
+     <br/>
+           
+          <!--<div class="clearfix">
+              <div class="id_11">-->
+     <!--<label  style="margin-left:700px">Voir article precedent</label> -->
+       <button  style="margin-left:600px" ng-click="prec()" class="btn btn-success">Voir article prec</button>
+     <br/>
+      
+    <!-- <img id="prec" style="margin-left:700px;width:2%;" src="app/images/fleche1.jpg"/> -->
+     <br/>
+              <!--</div>
+              <div class="id_12">--> 
+     <!--<label  style="margin-left:700px">Voir article suivant</label>-->
+        <button  style="margin-left:600px" ng-click="suiv()" class="btn btn-success">Voir article suiv</button>
+    
+      <br/>
+      <!--<img id="suiv" style="margin-left:700px;width:2%;" src="app/images/fleche2.jpg"/> -->
+
+      
+       <div style="margin-top:200px;">
+      
+        <h3 style="">FORUM DE DISCUSSION</h3>
+      
+      </div>
+  
+            <div class="panel panel-info">
+            
+                <div class="panel-heading">
+                    HISTORIQUE FORUM (messages les plus récents)
+                </div>
+                            
+                <div class="panel-body">
+
+                    <ul id="ChatMessages">
+    
+        </div>
+
+      </div>
+   
+   
+
+
+
+   
+         
+</div>
+
+<div class="col-md-2">
+	  
+	   <div id="nom" style="">
+        </div>
+      
+      <div id="prix" style="">
+        </div>
+      
+        <div id="pseudo" style="">
+        </div>
+      
+        <div id="email" style="">
+        </div>
+      
+        <div id="mess" style="">
+        </div> 
+
+        <br/>
+
+       <button   ng-click="add(indice)"  class="btn btn-primary">Ajout pannier</button>
+       <br/><br/>
+
+       <button  ng-click="supp()" class="btn btn-primary">Suppression pannier</button>
+  		<br/><br/>
+       <button   ng-click="save()" class="btn btn-primary">Sauvegarde pannier</button>
+
+      
+      
+        <form id="" name="forumMessageForm" ng-submit="submit(forumMessageForm)" novalidate>
+
+
+           <label style="margin-left:100px;">Vos commentaires sur le forum</label> 
+           <br/><br/>
+
+          <!--<textarea style="margin-left:100px;" name="inputContenu" placeholder="taper votre message"rows=5 cols=40></textarea> -->
+          <br/><br/>  
+
+          <div ng-class="{'has-error': forumMessageForm.inputContenu.$invalid}">
+      <!--<label>Pseudo</label>-->
+      <!--<div ng-show="signupForm.region.$error.required">Ce champ est requis</div> -->
+      <div ng-show="forumMessageForm.inputContenu.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+      <div ng-show="forumMessageForm.inputContenu.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+      <textarea class="form-control"
+          name="inputContenu"
+          ng-model="MessageForum.inputContenu"
+          ng-minlength="4"
+          ng-maxlength="24"
+          placeholder="taper votre message"
+          required /> </textarea>
+  </div>
+
+  <br/>
+  
+          
+          <!--<input style="margin-left:100px;" type="text"  name ="inputAuteur"  placeholder="taper votre pseudo"></input>-->
+
+          <div ng-class="{'has-error': forumMessageForm.pseudo.$invalid}">
+          <!--<label>Pseudo</label>-->
+          <!--<div ng-show="signupForm.region.$error.required">Ce champ est requis</div> -->
+          <div ng-show="forumMessageForm.pseudo.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+          <div ng-show="forumMessageForm.pseudo.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+          <input class="form-control"
+            type="text"
+            name="pseudo"
+            ng-model="MessageForum.pseudo"
+            ng-minlength="4"
+            ng-maxlength="24"
+            placeholder="taper votre pseudo"
+            required/>
+          </div>
+
+
+          <br/>
+          <button style="" name="valider" class="btn btn-primary" type="submit">Ajout message au forum</button>
+      </form>
+
+
+    </div>
+
+
+    
+</div>
+
+<div class="col-md-1">
+	<p> Liste produits panier </p>
+   <img  src="../../wclient/src/app/images/icone_panier.jpg"/>
+
+	<br/>
+
+	<div id="listearticles" style=""/>
+     
+
+
+</div> 
+
+
+

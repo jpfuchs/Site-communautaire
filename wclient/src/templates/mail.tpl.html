@@ -1,0 +1,89 @@
+<div class="col-md-2">
+
+	<form name="emailForm" ng-submit="submit(emailForm)" novalidate>
+
+		<label>Votre message:</label>
+	
+		</br/><br/>
+	
+		<div ng-class="{'has-error': emailForm.destinataire.$invalid}">
+	
+			<div ng-show="emailForm.destinataire.$error.required">Ce champ est requis</div>
+	
+			<div ng-show="emailForm.destinataire.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+	
+			<div ng-show="emailForm.destinataire.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+	
+			<input class="form-control"
+					type="text"
+					name="destinataire"
+					ng-model="email.destinataire"
+					ng-minlength="4"
+					ng-maxlength="24"
+					placeholder="email"
+					required />
+		</div>
+
+		<br/>
+
+
+<div ng-class="{'has-error': emailForm.object.$invalid}">
+	
+			<div ng-show="emailForm.object.$error.required">Ce champ est requis</div>
+	
+			<div ng-show="emailForm.object.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+	
+			<div ng-show="emailForm.object.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+	
+			<input class="form-control"
+					type="text"
+					name="object"
+					ng-model="email.objet"
+					ng-minlength="4"
+					ng-maxlength="24"
+					placeholder="sujet"
+					required />
+		</div>
+
+		<br/>
+        
+          <div ng-class="{'has-error': emailForm.message.$invalid}">
+      	
+      			<div ng-show="emailForm.message.$error.maxlength">Ce champ ne doit pas dépasser 24 caractères</div>
+      	
+      			<div ng-show="emailForm.message.$error.minlength">Ce champ doit faire 4 caractères minimum</div>
+      	
+      			<textarea class="form-control"
+          			name="message"
+          			ng-model="email.message"
+          			ng-minlength="4"
+          			ng-maxlength="24"
+          			placeholder="Votre message"
+          			required /> 
+          		</textarea>
+  		
+  		</div>
+
+	<br/>
+	
+	<button class="btn btn-primary" type="submit">Envoyer</button>
+
+	</form>
+
+	<!--<div id="message"/> -->
+
+</div>
+
+<div class="col-md-7">
+
+	<!--<a href="#/eyes_services_forum">Page precedente</a> -->
+	
+</div>
+
+
+<div class="col-md-3">
+
+	<!--<a href="#/eyes_services_forum">Page precedente</a> -->
+	<a href="#/dashboard">Retour page principal</a>
+	<div id="message"/>
+</div>

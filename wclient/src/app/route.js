@@ -26,6 +26,10 @@ angular.module('EyesApp')
 				templateUrl: 'templates/eyes_services_forum.tpl.html',
 				controller: 'eyesservicesforumController'
 			})
+			.when('/mail', {
+				templateUrl: 'templates/mail.tpl.html',
+				controller: 'mailController'
+			})
 			.otherwise({
 				redirectTo: '/'
 			})

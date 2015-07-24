@@ -18,5 +18,9 @@ angular.module('EyesApp.controllers')
 					});
 			}
 		}
+
+		 $window.localStorage.clear();
+          $rootScope.user = "";
+           
 		//$scope.
 	}]);

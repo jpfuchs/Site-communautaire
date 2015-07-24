@@ -13,6 +13,8 @@
 					<ul>
 						<li><a href="#/">Accueil</a></li>
 						<li ng-if="user">Bienvenue {{user.pseudo}}</li>
+						<!-- rajouter un ng click qui appele une fonction deconnection definie dans le controller layout -->
+						<li ng-if="user" ng-click="logout()"> Deconnexion</li>
 						<li><img ng-src="app/images/oeil-generique-2-1.jpg"/></li>
 					</ul>
 				</nav>
@@ -26,6 +28,9 @@
 		<script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
 		<script type="text/javascript" src="app/main.js"></script>
 		<script type="text/javascript" src="app/route.js"></script>
+		<script src="bower_components/socket.io/node_modules/socket.io-client/socket.io.js"></script> 
+		 <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script>
+
 		<script type="text/javascript" src="app/controllers/controllers.js"></script>
 		<script type="text/javascript" src="app/controllers/layout.controller.js"></script>
 		<script type="text/javascript" src="app/controllers/index.controller.js"></script>
@@ -34,5 +39,19 @@
 		<script type="text/javascript" src="app/controllers/eyesservices.controller.js"></script>
 		<script type="text/javascript" src="app/controllers/eyesservicesaccueil.controller.js"></script>
 		<script type="text/javascript" src="app/controllers/eyesservicesforum.controller.js"></script>
+		<script type="text/javascript" src="app/controllers/mail.controller.js"></script>
+
+		 <script type="text/javascript">
+    		$(document).ready(function () {
+     
+        		console.log("titi");
+             //$('#message').text(obj.message)
+        	
+
+      });
+    
+  </script>
+
+		<!-- <script type="text/javascript" src="app/services/Articles.js"></script> --> 
 	</body>
 </html>
